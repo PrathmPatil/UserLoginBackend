@@ -80,18 +80,18 @@ import * as UserService from '../services/user.service';
 //  * @param {object} res - response object
 //  * @param {Function} next
 //  */
-export const updateUser = async (req, res, next) => {
-  try {
-    const data = await UserService.updateUser(req.params._id, req.body);
-    res.status(HttpStatus.ACCEPTED).json({
-      code: HttpStatus.ACCEPTED,
-      data: data,
-      message: 'User updated successfully'
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+// export const updateUser = async (req, res, next) => {
+//   try {
+//     const data = await UserService.updateUser(req.params._id, req.body);
+//     res.status(HttpStatus.ACCEPTED).json({
+//       code: HttpStatus.ACCEPTED,
+//       data: data,
+//       message: 'User updated successfully'
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 /**
  * Controller to delete a user
@@ -99,16 +99,16 @@ export const updateUser = async (req, res, next) => {
  * @param {object} res - response object
  * @param {Function} next
  */
-// export const deleteUser = async (req, res, next) => {
-//   try {
-//     await UserService.deleteUser(req.params._id);
-//     res.status(HttpStatus.OK).json({
-//       code: HttpStatus.OK,
-//       data: [],
-//       message: 'User deleted successfully'
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+export const deleteUser = async (req, res, next) => {
+  try {
+    await UserService.deleteUser(req.params._id);
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: [],
+      message: 'User deleted successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 

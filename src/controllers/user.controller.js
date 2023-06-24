@@ -7,18 +7,20 @@ import * as UserService from '../services/user.service';
 //  * @param {object} res - response object
 //  * @param {Function} next
 //  */
-export const loginUser = async (req, res, next) => {
-  try {
-    const data = await UserService.loginUser(req.body);
-    res.status(HttpStatus.OK).json({
-      code: HttpStatus.OK,
-      data:data,
-      message: 'Login Successed.'
-    });
-  } catch (error) {
-      next(error);
-  }
-};
+//For User Login
+
+// export const loginUser = async (req, res, next) => {
+//   try {
+//     const data = await UserService.loginUser(req.body);
+//     res.status(HttpStatus.OK).json({
+//       code: HttpStatus.OK,
+//       data:data,
+//       message: 'Login Successed.'
+//     });
+//   } catch (error) {
+//       next(error);
+//   }
+// };
 
 // /**
 //  * Controller to get a single user
@@ -83,16 +85,16 @@ export const registrationUser = async (req, res, next) => {
  * @param {object} res - response object
  * @param {Function} next
  */
-export const deleteUser = async (req, res, next) => {
-  try {
-    await UserService.deleteUser(req.params._id);
-    res.status(HttpStatus.OK).json({
-      code: HttpStatus.OK,
-      data: [],
-      message: 'User deleted successfully'
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+// export const deleteUser = async (req, res, next) => {
+//   try {
+//     await UserService.deleteUser(req.params._id);
+//     res.status(HttpStatus.OK).json({
+//       code: HttpStatus.OK,
+//       data: [],
+//       message: 'User deleted successfully'
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 

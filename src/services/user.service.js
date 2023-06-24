@@ -1,21 +1,21 @@
 import User from '../models/user.model';
 
 //get all users
-export const loginUser = async (body) => {
+// export const loginUser = async (body) => {
   
-    const data = await User.findOne({email:body.email});
-   if(data){
-        if(data.password==body.password ){
-          return data;
-        }else if(body.password==''){
-          throw new Error("enter password")
-        }else{
-          throw new Error("invalid password")
-        }
-   }else{
-      throw new Error("invalid email")
-   }
-};
+//     const data = await User.findOne({email:body.email});
+//    if(data){
+//         if(data.password==body.password ){
+//           return data;
+//         }else if(body.password==''){
+//           throw new Error("enter password")
+//         }else{
+//           throw new Error("invalid password")
+//         }
+//    }else{
+//       throw new Error("invalid email")
+//    }
+// };
 
 //create new user
 export const registrationUser = async (body) => {
@@ -38,10 +38,10 @@ export const registrationUser = async (body) => {
 // };
 
 //delete single user
-export const deleteUser = async (id) => {
-  await User.findByIdAndDelete(id);
-  return '';
-};
+// export const deleteUser = async (id) => {
+//   await User.findByIdAndDelete(id);
+//   return '';
+// };
 
 // //get single user
 // export const getUser = async (id) => {

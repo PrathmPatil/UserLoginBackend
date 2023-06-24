@@ -18,11 +18,16 @@ import User from '../models/user.model';
 // };
 
 //create new user
-export const registrationUser = async (body) => {
-  const data = await User.create(body);
-  return data;
-};
+// export const registrationUser = async (body) => {
+//   const data = await User.create(body);
+//   return data;
+// };
 
+//read data
+export const readAllData=async(body)=>{
+  const data=await User.find();
+  return data;
+}
 // //update single user
 // export const updateUser = async (_id, body) => {
 //   const data = await User.findByIdAndUpdate(

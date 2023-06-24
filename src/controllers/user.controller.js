@@ -60,6 +60,20 @@ export const registrationUser = async (req, res, next) => {
   }
 };
 
+//Controller to get users data
+export const readAllData = async (req, res, next) => {
+try {
+  const data = await UserService.readAllData();
+    res.status(HttpStatus.OK).json({
+      code: HttpStatus.OK,
+      data: data,
+      message: 'User fetched successfully'
+      });
+    } catch (error) {
+     next(error);
+    }
+  };
+
 // /**
 //  * Controller to update a user
 //  * @param  {object} req - request object

@@ -24,23 +24,24 @@ import User from '../models/user.model';
 // };
 
 //read data
-export const readAllData=async(body)=>{
-  const data=await User.find();
-  return data;
-}
-// //update single user
-// export const updateUser = async (_id, body) => {
-//   const data = await User.findByIdAndUpdate(
-//     {
-//       _id
-//     },
-//     body,
-//     {
-//       new: true
-//     }
-//   );
+// export const readAllData=async(body)=>{
+//   const data=await User.find();
 //   return data;
-// };
+// }
+
+// //update single user
+export const updateUser = async (_id, body) => {
+  const data = await User.findByIdAndUpdate(
+    {
+      _id
+    },
+    body,
+    {
+      new: true
+    }
+  );
+  return data;
+};
 
 //delete single user
 // export const deleteUser = async (id) => {

@@ -47,32 +47,32 @@ import * as UserService from '../services/user.service';
 //  * @param {object} res - response object
 //  * @param {Function} next
 //  */
-export const registrationUser = async (req, res, next) => {
-  try {
-    const data = await UserService.registrationUser(req.body);
-    res.status(HttpStatus.CREATED).json({
-      code: HttpStatus.CREATED,
-      data: data,
-      message: 'User created successfully'
-    });
-  } catch (error) {
-    next(error);
-  }
-};
+// export const registrationUser = async (req, res, next) => {
+//   try {
+//     const data = await UserService.registrationUser(req.body);
+//     res.status(HttpStatus.CREATED).json({
+//       code: HttpStatus.CREATED,
+//       data: data,
+//       message: 'User created successfully'
+//     });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 
 //Controller to get users data
-export const readAllData = async (req, res, next) => {
-try {
-  const data = await UserService.readAllData();
-    res.status(HttpStatus.OK).json({
-      code: HttpStatus.OK,
-      data: data,
-      message: 'User fetched successfully'
-      });
-    } catch (error) {
-     next(error);
-    }
-  };
+// export const readAllData = async (req, res, next) => {
+// try {
+//   const data = await UserService.readAllData();
+//     res.status(HttpStatus.OK).json({
+//       code: HttpStatus.OK,
+//       data: data,
+//       message: 'User fetched successfully'
+//       });
+//     } catch (error) {
+//      next(error);
+//     }
+//   };
 
 // /**
 //  * Controller to update a user
@@ -80,18 +80,18 @@ try {
 //  * @param {object} res - response object
 //  * @param {Function} next
 //  */
-// export const updateUser = async (req, res, next) => {
-//   try {
-//     const data = await UserService.updateUser(req.params._id, req.body);
-//     res.status(HttpStatus.ACCEPTED).json({
-//       code: HttpStatus.ACCEPTED,
-//       data: data,
-//       message: 'User updated successfully'
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+export const updateUser = async (req, res, next) => {
+  try {
+    const data = await UserService.updateUser(req.params._id, req.body);
+    res.status(HttpStatus.ACCEPTED).json({
+      code: HttpStatus.ACCEPTED,
+      data: data,
+      message: 'User updated successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 /**
  * Controller to delete a user

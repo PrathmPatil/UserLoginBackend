@@ -9,7 +9,7 @@ const router = express.Router();
 // router.get('/login', userController.loginUser);
 
 //route to get all users
-router.get('',userController.readAllData)
+// router.get('',userController.readAllData)
 
 // //route to create a new user
 // router.post('',signInRegistration, userController.registrationUser);
@@ -18,7 +18,7 @@ router.get('',userController.readAllData)
 // router.get('/:_id', userController.getUser);
 
 // //route to update a single user by their user id
-// router.put('/:_id', userController.updateUser);
+router.put('/:_id', userController.updateUser);
 
 //route to delete a single user by their user id
 // router.delete('/:_id', userController.deleteUser);

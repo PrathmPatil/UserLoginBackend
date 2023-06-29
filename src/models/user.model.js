@@ -14,7 +14,7 @@ const signInData = new Schema(
     },
     password:{
       type:String
-    }
+    },
   },
   {
     timestamps: true
